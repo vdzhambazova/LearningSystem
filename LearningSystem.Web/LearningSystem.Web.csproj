@@ -201,9 +201,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -267,7 +264,14 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <ProjectReference Include="..\LearningSystem.Data\LearningSystem.Data.csproj">
+      <Project>{AEAD0116-CDCC-4778-81BF-6123CCF420DA}</Project>
+      <Name>LearningSystem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LearningSystem.Models\LearningSystem.Models.csproj">
+      <Project>{7B46C8B1-FF42-4BA6-A36B-11718FF7C033}</Project>
+      <Name>LearningSystem.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,5 +1,4 @@
 using System.Linq;
-using LearningSystem.Models.EntityModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -7,12 +6,11 @@ namespace LearningSystem.Data.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<LearningSystem.Data.LearningSystemContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<LearningSystemContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(LearningSystem.Data.LearningSystemContext context)

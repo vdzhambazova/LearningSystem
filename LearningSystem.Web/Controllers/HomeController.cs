@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace LearningSystem.Web.Controllers
 {
+    [Authorize(Roles="Admin")]
     public class HomeController : Controller
     {
         // GET: Home

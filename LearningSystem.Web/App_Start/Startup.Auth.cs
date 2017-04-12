@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Google;
 using Owin;
 
 namespace LearningSystem.Web
@@ -54,15 +55,15 @@ namespace LearningSystem.Web
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "150830165445717",
+               appSecret: "53e06b6a59fe05754dd0cf286508ed22");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "398809410565-p560khqjnqqbik50joschn8jgil0c9s5.apps.googleusercontent.com",
+                ClientSecret = "fwS3ZeMFx1V7enFsJtAUK13Z"
+            });
         }
     }
 }

@@ -1,14 +1,15 @@
-using System.Data.Entity;
 using LearningSystem.Models.EntityModels;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace LearningSystem.Data
 {
+    using System.Data.Entity;
+
     public class LearningSystemContext : IdentityDbContext<ApplicationUser>
     {
 
         public LearningSystemContext()
-           : base("name=LearningSystem", throwIfV1Schema: false)
+            : base("LearningSystemContext", throwIfV1Schema: false)
         {
         }
 

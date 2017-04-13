@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LearningSystem.Models.ViewModels.Account
 {
@@ -19,5 +20,12 @@ namespace LearningSystem.Models.ViewModels.Account
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required, MinLength(2)]
+        public string Name { get; set; }
+
+        [Required, Display(Name = "Birth Date")]
+        public DateTime BirthDate { get; set; }
+          
     }
 }

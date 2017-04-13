@@ -1,18 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using LearningSystem.Models.ViewModels.Courses;
+using LearningSystem.Services;
 
 namespace LearningSystem.Web.Controllers
 {
-    [Authorize(Roles="Admin")]
+    [Authorize(Roles = "Student")]
     public class HomeController : Controller
     {
-        // GET: Home
+        private HomeService homeService;
+
+        public HomeController()
+        {
+            this.homeService = new HomeService();
+        }
+
+        [AllowAnonymous]
         public ActionResult Index()
         {
-            return View();
+            IEnumerable<CourseViewModel> cvms = this.homeService.GetAllCourses();
+
+            return this.View(cvms);
         }
     }
 }

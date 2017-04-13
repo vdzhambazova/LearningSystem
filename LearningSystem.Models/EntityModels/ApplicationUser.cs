@@ -10,7 +10,7 @@ namespace LearningSystem.Models.EntityModels
     {
         public string Name { get; set; }
 
-        public DateTime? BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

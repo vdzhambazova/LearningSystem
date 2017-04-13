@@ -4,6 +4,7 @@ using System.Web.Routing;
 using AutoMapper;
 using LearningSystem.Models.EntityModels;
 using LearningSystem.Models.ViewModels.Courses;
+using LearningSystem.Models.ViewModels.Users;
 
 namespace LearningSystem.Web
 {
@@ -24,6 +25,9 @@ namespace LearningSystem.Web
            {
                expression.CreateMap<Course, CourseViewModel>();
                expression.CreateMap<Course, CourseDetailsViewModel>();
+               expression.CreateMap<ApplicationUser, UserProfileViewModel>();
+               expression.CreateMap<Course, UsersCourseViewMode>();
+               expression.CreateMap<ApplicationUser, UserEditViewModel>();
            });
         }
     }

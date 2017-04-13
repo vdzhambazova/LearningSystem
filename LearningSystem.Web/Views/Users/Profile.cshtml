@@ -1,0 +1,50 @@
+﻿@model LearningSystem.Models.ViewModels.Users.UserProfileViewModel
+@{
+    ViewBag.Title = "Profile Page";
+}
+
+<h2>My Profile</h2>
+<br />
+@Html.ActionLink("Edit", "Edit")
+
+<h4>
+    @Html.DisplayNameFor(c => c.Name):
+    @Html.DisplayFor(c => c.Name)
+</h4>
+
+<h4>
+    @Html.DisplayNameFor(c => c.Email):
+    @Html.DisplayFor(c => c.Email)
+</h4>
+
+<h4>
+    @Html.DisplayNameFor(c => c.BirthDate):
+    @Html.DisplayFor(c => c.BirthDate)
+</h4>
+<br />
+
+<h3>Courses</h3>
+<br />
+
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Grade</th>
+    </tr>
+    
+    @foreach (var usersCourseViewMode in Model.Courses)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(c => usersCourseViewMode.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(c => usersCourseViewMode.Grade)
+            </td>
+        </tr>
+    }
+</table>
+<br />
+
+@Html.ActionLink("Home", "Index", "Home")
+

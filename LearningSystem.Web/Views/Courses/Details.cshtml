@@ -35,6 +35,7 @@
     using (Html.BeginForm("Enroll", "Users", FormMethod.Post))
     {
         <input type="number" value="@Model.Id" hidden="hidden" name="courseId"/>
+        <br/>
         <input type="submit" value="Sign In" class="btn btn-success"/>
     }
 }

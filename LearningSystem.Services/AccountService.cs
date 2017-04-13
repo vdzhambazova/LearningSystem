@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LearningSystem.Models.EntityModels;
-using Microsoft.VisualBasic.ApplicationServices;
+﻿using LearningSystem.Models.EntityModels;
 
 namespace LearningSystem.Services
 {
@@ -13,8 +7,10 @@ namespace LearningSystem.Services
         public void CreateStudent(ApplicationUser user)
         {
             Student student = new Student();
-            student.User = user;
+            ApplicationUser currentUser = this.Context.Users.Find(user.Id);
+            student.User = currentUser;
             this.Context.Students.Add(student);
+            this.Context.SaveChanges();
         }
     }
 }

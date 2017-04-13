@@ -16,7 +16,7 @@ namespace LearningSystem.Data.Migrations
             this.AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(LearningSystem.Data.LearningSystemContext context)
+        protected override void Seed(LearningSystemContext context)
         {
             context.Courses.AddOrUpdate(course => course.Name, new Course[]
             {

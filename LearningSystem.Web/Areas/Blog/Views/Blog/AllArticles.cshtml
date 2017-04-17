@@ -1,0 +1,32 @@
+﻿@using System.Web.Mvc.Html
+@model IEnumerable<LearningSystem.Models.ViewModels.Blog.ArticleViewModel>
+
+    @{
+        ViewBag.Title = "title";
+        Layout = "~/Areas/Blog/Views/Shared/_Layout.cshtml";
+    }
+
+<h2>Blog of Learning System</h2>
+    
+@if (User.IsInRole("BlogAuthor"))
+{
+    @Html.ActionLink("Add Article", "Add");
+}
+
+<section>
+        @foreach (var articleViewModel in Model)
+        {
+            <article>
+                <h3>
+                    @Html.DisplayFor(vms => articleViewModel.Title)
+                </h3>
+                <p>
+                    @Html.DisplayFor(vms => articleViewModel.Content)
+                </p>
+                <br />
+                <br />
+                <span>@Html.DisplayFor(vms => articleViewModel.Author) </span>
+                <span>@Html.DisplayFor(vms=> articleViewModel.PublishDate) </span>
+            </article>
+        }
+    </section>

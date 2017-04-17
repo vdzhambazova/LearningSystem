@@ -3,6 +3,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using AutoMapper;
 using LearningSystem.Models.EntityModels;
+using LearningSystem.Models.ViewModels.Blog;
 using LearningSystem.Models.ViewModels.Courses;
 using LearningSystem.Models.ViewModels.Users;
 
@@ -28,6 +29,8 @@ namespace LearningSystem.Web
                expression.CreateMap<ApplicationUser, UserProfileViewModel>();
                expression.CreateMap<Course, UsersCourseViewMode>();
                expression.CreateMap<ApplicationUser, UserEditViewModel>();
+               expression.CreateMap<Article, ArticleViewModel>();
+               expression.CreateMap<ApplicationUser, ArticleAuthorViewModel>();
            });
         }
     }
